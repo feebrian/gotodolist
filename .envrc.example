@@ -1,0 +1,7 @@
+export DB_HOST="127.0.0.1"
+export DB_USERNAME="postgres"
+export DB_PASSWORD=""
+export DB_PORT="2345"
+export DB_NAME="postgres"
+
+export GIN_MODE="debug"

@@ -1,0 +1,28 @@
+# Go Binary
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go Build
+*.o
+*.a
+*.test
+
+# Go Test Output
+*.test
+
+# Go Coverage Profile
+*.cov
+
+# Go Environment
+.envrc
+
+# Go Dependency Directories
+/vendor/
+/go.sum
+
+# Database file 
+# if I'm not used sqlite anymore I will delete this section
+/database/
