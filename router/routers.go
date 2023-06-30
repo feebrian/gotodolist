@@ -2,11 +2,18 @@ package router
 
 import (
 	"github.com/feebrian/gotodolist/app/controllers"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func Router() *gin.Engine {
+
 	r := gin.Default()
+
+	// setup for allowing cors request
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+	r.Use(cors.New(config))
 
 	r.GET("/", controllers.GetTodos)
 	r.GET("/todos", controllers.GetTodos)
