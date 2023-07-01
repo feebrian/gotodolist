@@ -24,6 +24,7 @@ func Router() *gin.Engine {
 	r.DELETE("/todos/delete/:id", controllers.DeleteTodo)
 
 	r.POST("/register", authcontrollers.Register)
+	r.POST("/login", authcontrollers.Login)
 
 	return r
 }
