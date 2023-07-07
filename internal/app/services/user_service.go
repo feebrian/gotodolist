@@ -20,7 +20,7 @@ func CreateUser(user *domain.CreateUser) error {
 }
 
 func ValidateUser(user *domain.CreateUser) error {
-	if user.Name == "" {
+	if user.Username == "" {
 		return errors.New("name field is required")
 	} else if user.Email == "" {
 		return errors.New("email field is required")

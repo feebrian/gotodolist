@@ -7,7 +7,7 @@ import (
 
 func SaveUser(u *domain.CreateUser) error {
 	user := domain.User{
-		Name:     u.Name,
+		Username: u.Username,
 		Email:    u.Email,
 		Password: utils.HashPassword(u.Password),
 	}

@@ -22,13 +22,13 @@ func CreateUser(c *fiber.Ctx) error {
 		})
 	}
 
-	return c.Status(200).JSON(fiber.Map{
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "successfully create User",
 		"user":    user,
 	})
 }
 
-func GetUser(c *fiber.Ctx) error {
+func FindUsers(c *fiber.Ctx) error {
 	var users []domain.User
 
 	if err := services.FindUsers(&users); err != nil {
@@ -38,7 +38,7 @@ func GetUser(c *fiber.Ctx) error {
 		})
 	}
 
-	return c.Status(200).JSON(fiber.Map{
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "Users found",
 		"users":   users,
 	})

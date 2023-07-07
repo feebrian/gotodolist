@@ -4,7 +4,7 @@ import "time"
 
 type User struct {
 	ID        uint      `json:"id" gorm:"primaryKey"`
-	Name      string    `json:"name"`
+	Username  string    `json:"username" gorm:"unique"`
 	Email     string    `json:"email" gorm:"unique"`
 	Password  string    `json:"password"`
 	CreatedAt time.Time `json:"created_at"`
@@ -12,7 +12,7 @@ type User struct {
 }
 
 type CreateUser struct {
-	Name     string `json:"name" binding:"required"`
+	Username string `json:"username" binding:"required" gorm:"unique"`
 	Email    string `json:"email" binding:"required" gorm:"unique"`
 	Password string `json:"password" binding:"required"`
 }
